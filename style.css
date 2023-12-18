@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars caused by blur effect */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image.jpg') center/cover fixed no-repeat; /* Add your background image URL here */
+    filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place the background behind other content */
+}
+
+header {
+    background-color: #2C3E50; /* Dark blue-gray background color */
+    color: #ECF0F1; /* Light gray text color */
+    text-align: center;
+    padding: 2em;
+    width: 100%; /* Adjusted to full width */
+    height: 255px; /* Fixed height for the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    transform: translateY(-12cm); /* Move the section up by 14cm */
+}
+
+.header-image {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    height: 200px; /* Set a fixed height for the image */
+    width: 200px;
+}
+
+.header-image img {
+    max-width: 3000%; /* Ensure the image doesn't exceed its container */
+    max-height: 100%; /* Ensure the image doesn't exceed its container */
+    border-radius: 100%; /* Make the image circular, adjust as needed */
+}
+
+nav {
+    background-color: #34495E; /* Darker blue-gray background color */
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    top: -14cm; /* Adjusted to position buttons below the header */
+}
+
+.nav-button {
+    padding: 15px; /* Increase button padding */
+    background-color: #2C3E50; /* Dark blue-gray background color */
+    color: #ECF0F1; /* Light gray text color */
+    border: none;
+    cursor: pointer;
+}
+
+.content-section {
+    max-width: 800px; /* Increase the maximum width */
+    transform: translateY(4cm); /* Initially position sections 4cm down */
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.5s;
+    padding: 4em; /* Increase the padding for more space */
+    background-color: #7F8C8D; /* Lighter blue-gray background color */
+    box-shadow: 0 0 40px #2C3E50; /* Dark blue-gray shadow for a pronounced 3D effect */
+    border-radius: 16px; /* Increase the border radius for a smoother look */
+    border: 3px solid #34495E; /* Darker blue-gray border for contrast */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text within the section */
+}
+
+.content-section.active {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* Center the section both horizontally and vertically */
+}
+
+footer {
+    background-color: #2C3E50; /* Dark blue-gray background color */
+    color: #ECF0F1; /* Light gray text color */
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
